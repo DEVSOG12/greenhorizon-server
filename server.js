@@ -15,9 +15,9 @@ app.get("/", (request, response) => {
     })
   }
   var oauth2 = defaultClient.authentications['oauth2'];
-  oauth2.accessToken = 'your-access-token-here';
+  oauth2.accessToken = 'EAAAEKqzQAEPPY1r01gDWulWTsMhbIEHN42F7QpUQ-DG2YQUJAZTnCDh-DWx1bGd';
   var transactionApi = new SquareConnect.TransactionsApi();
-  transactionApi.charge("your-location-id-here", {
+  transactionApi.charge("4CPVCMRZR1FHG", {
     idempotency_key: new Date(),
     card_nonce: request.query.nonce,
     amount_money: {
