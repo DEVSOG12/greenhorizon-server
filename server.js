@@ -33,6 +33,4 @@ app.get("/", (request, response) => {
   });
 })
 // Replace the IP address with your own local IP
-app.listen(8080,  () => {
-    console.log("Server running...");
-})
+app.listen(process.env.PORT || 8080)
