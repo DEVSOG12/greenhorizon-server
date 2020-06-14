@@ -1,4 +1,5 @@
 var SquareConnect = require('square-connect');
+
 var defaultClient = SquareConnect.ApiClient.instance;
 var app = require('express')();
 var bodyParser = require('body-parser');
@@ -16,6 +17,7 @@ app.get("/", (request, response) => {
   }
   var oauth2 = defaultClient.authentications['oauth2'];
   oauth2.accessToken = 'EAAAEKqzQAEPPY1r01gDWulWTsMhbIEHN42F7QpUQ-DG2YQUJAZTnCDh-DWx1bGd';
+  defaultClient.basePath = 'https://connect.squareupsandbox.com'
   var transactionApi = new SquareConnect.TransactionsApi();
   transactionApi.charge("4CPVCMRZR1FHG", {
     idempotency_key: new Date(),
