@@ -8,7 +8,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.get("/", (request, response) => {
+app.get("/", function (request, response)  {
+  var amount = Number(request.query.amount)
   if (request.query.nonce == null) {
     response.send({
       code: 400,
@@ -23,7 +24,7 @@ app.get("/", (request, response) => {
     idempotency_key: new Date(),
     card_nonce: request.query.nonce,
     amount_money: {
-      amount: 500,
+      amount: amount,
       currency: "USD"
     }
   }).then(function (data) {
