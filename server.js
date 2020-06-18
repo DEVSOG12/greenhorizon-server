@@ -27,6 +27,7 @@ app.get("/", function (request, response)  {
       amount: amount,
       currency: "USD"
     }
+  
   }).then(function (data) {
     console.log('API called successfully. Returned data: ' + JSON.stringify(data));
     response.send(data);
