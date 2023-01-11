@@ -17,7 +17,7 @@ app.get("/", function (request, response)  {
     })
   }
   var oauth2 = defaultClient.authentications['oauth2'];
-  oauth2.accessToken = 'EAAAEKqzQAEPPY1r01gDWulWTsMhbIEHN42F7QpUQ-DG2YQUJAZTnCDh-DWx1bGd';
+  oauth2.accessToken = process.env.ACCESS_TOKEN;
   defaultClient.basePath = 'https://connect.squareupsandbox.com'
   var transactionApi = new SquareConnect.TransactionsApi();
   transactionApi.charge("4CPVCMRZR1FHG", {
